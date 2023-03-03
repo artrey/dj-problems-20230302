@@ -1,0 +1,40 @@
+GET http://localhost:8000/api/posts/
+Content-Type: application/json
+
+###
+
+POST http://localhost:8000/api/posts/
+Content-Type: application/json
+Authorization: Token 29dcd7338537277e5ef1fae0bc2034a53289cf25
+
+{
+  "text": "text from api 2",
+  "tags": [{"name": "tag1"}, {"name": "tag3"}]
+}
+
+###
+
+POST http://localhost:8000/api/posts/bulk-create/
+Content-Type: application/json
+Authorization: Token 29dcd7338537277e5ef1fae0bc2034a53289cf25
+
+[
+{
+  "text": "text from api 2",
+  "tags": [{"name": "tag1"}, {"name": "tag3"}]
+},
+{
+  "text": "text from api 2",
+  "tags": [{"name": "tag1"}, {"name": "tag3"}]
+}
+]
+
+###
+
+PATCH http://localhost:8000/api/posts/2/
+Content-Type: application/json
+Authorization: Token 29dcd7338537277e5ef1fae0bc2034a53289cf25
+
+{
+  "tags": [{"name": "tag4"}, {"name": "tag3"}]
+}
